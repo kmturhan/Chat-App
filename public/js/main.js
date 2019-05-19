@@ -13,7 +13,7 @@ socket.on('new message', function(data){
 socket.on('get users', function(data){
     var html = '';
     data.forEach(function(element) {
-        html += '<li>'+element+'</li>';
+        html += '<li><b>'+element+'</b></li>';
     });
     
     $('#userList').html(html);
