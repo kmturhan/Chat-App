@@ -18,7 +18,7 @@ body{
 .users{
     display: flex;
     flex-direction: column;
-    height: 90vh;
+    height: 50vh;
     position: relative;
     font-size: 10px;
 }
@@ -28,7 +28,7 @@ body{
 }
 .content{
     display: flex;
-    height: 70vh;
+    height: 30vh;
 }
 .form{
     position: absolute;
