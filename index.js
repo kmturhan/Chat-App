@@ -1,5 +1,8 @@
-var app = require('express')();
+
+var express = require('express');
+var app = express();
 var http = require('http').Server(app);
+var router = express.Router();
 var io = require('socket.io')(http);
 
 var port = process.env.PORT || 5000;
@@ -8,6 +11,10 @@ var users = [];
 app.get('/', function(req,res){
     res.sendFile(__dirname+'/index.html');
 })
+
+app.use("/",router);
+app.use(express.static(__dirname + "public"));
+
 
 io.on('connection', function(socket){
     var usersID = socket.id.substr(7,5);
