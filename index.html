@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    
+    <title>Show Must Go On</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
 <style>
 #chatBox{
     display: flex;
@@ -25,27 +26,31 @@
 </style>
 </head>
 <body>
-    <div class="chatApp">
-        <div id="users">
-            Online Users
-            <div id="userList">
+    <div class="container">
+        <div class="col-6">
+            <div class="chatApp">
+                <div id="users">
+                    Online Users
+                    <div id="userList">
 
+                    </div>
+                </div>
+                
+                <div id="chatBox">
+                    
+                </div>
             </div>
         </div>
-        
-        <div id="chatBox">
-            
+        <div class="col-6">
+            <form action="" id="messageForm">
+                <input id="text" autocomplete="off"><button type="submit">Send</button>
+            </form>
         </div>
-
-        <form action="" id="messageForm">
-            <input id="text" autocomplete="off"><button type="submit">Send</button>
-        </form>
     </div>
-   
     <script src="/socket.io/socket.io.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    
-    
+    <script type="text/javascript"src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.bundle.min.js"></script>
     <script>
         var socket = io();
         $('#messageForm').submit(function(){
