@@ -11,8 +11,8 @@ body{
 .chatApp{
     display: flex;
     flex-direction: column;
-    height: 30vh;
-    
+    height: 50vh;
+    margin-top: 30px;
 }
 .users{
     display: flex;
@@ -27,7 +27,7 @@ body{
 }
 .content{
     display: flex;
-    height: 20vh;
+    height: 40vh;
 }
 .form{
     position: absolute;
