@@ -1,0 +1,16 @@
+{
+  "name": "socket_example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "4.17.0",
+    "socket.io": "2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Kamil Turhan",
+  "license": "ISC"
+}
