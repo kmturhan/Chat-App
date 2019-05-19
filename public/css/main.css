@@ -1,0 +1,41 @@
+body{
+    background-color: black;
+    color: blanchedalmond;
+}
+.chatBox{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 80vh;
+    overflow-y: scroll;
+}
+.chatApp{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    
+}
+.users{
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    position: relative;
+    font-size: 10px;
+}
+.rowMessage{
+    width: 100%;
+    word-wrap: break-word;
+}
+.content{
+    display: flex;
+    height: 70vh;
+}
+.form{
+    position: absolute;
+    bottom: 40px;
+}
+
+#messageForm{
+    display: flex;
+    justify-content: space-evenly;
+}

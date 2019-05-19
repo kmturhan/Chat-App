@@ -7,70 +7,38 @@
     <title>Show Must Go On</title>
     
     <link rel="stylesheet" href="/css/bootstrap.min.css" >
-<style>
-#chatBox{
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-}
-.chatApp{
-    display: flex;
-}
-#users{
-    width: 200px;
-}
-.rowMessage{
-    width: 100%;
-    word-wrap: break-word;
-}
-</style>
+    <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
     <div class="container">
-        <div class="col-6">
-            <div class="chatApp">
-                <div id="users">
-                    Online Users
-                    <div id="userList">
+        <div class="row">
+            <div class="col-12">
+                <div class="chatApp">
+                    <div class="content">
+                        <div class="users col-4">
+                            Online Users
+                            <div id="userList">
 
+                            </div>
+                            
+                        </div>
+                        
+                        <div class="chatBox col-8">
+                            
+                        </div>
+                    </div>
+                    <div class="form col-12 form-group">
+                        <form action="" id="messageForm">
+                            <input id="text" class="form-control" autocomplete="off">
+                            <button type="submit" class="btn btn-warning">Send</button>
+                        </form>
                     </div>
                 </div>
-                
-                <div id="chatBox">
-                    
-                </div>
             </div>
-        </div>
-        <div class="col-6">
-            <form action="" id="messageForm">
-                <input id="text" autocomplete="off"><button type="submit">Send</button>
-            </form>
         </div>
     </div>
     <script src="/socket.io/socket.io.js"></script>
     <script type="text/javascript" src="/js/jquery-3.4.1.min.js"></script>
-    <script>
-        
-        var socket = io();
-        $('#messageForm').submit(function(){
-            
-            socket.emit('send message', $('#text').val());
-            $('#text').val('');
-            return false;
-        });
-
-        socket.on('new message', function(data){
-            $('#chatBox').prepend(`<div class='rowMessage'><span><b>${data[0]} : </b></span><span> ${data[1]}<span></div>`);
-        })
-        
-        socket.on('get users', function(data){
-            var html = '';
-            data.forEach(function(element) {
-                html += '<li>'+element+'</li>';
-            });
-            
-            $('#userList').html(html);
-        })
-    </script>
+    <script type="text/javascript" src="/js/main.js"></script>
 </body>
 </html>
