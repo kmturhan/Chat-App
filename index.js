@@ -8,12 +8,19 @@ var io = require('socket.io')(http);
 var port = process.env.PORT || 5000;
 var connections = [];
 var users = [];
+
+
+
+
+app.use(express.static("public"));
+
+
 app.get('/', function(req,res){
     res.sendFile(__dirname+'/index.html');
+    
 })
 
-app.use("/",router);
-app.use(express.static(__dirname + "public"));
+
 
 
 io.on('connection', function(socket){
